@@ -1,51 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="CryOut.com">
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-    <meta name="author" content="Shreya, Sarthak Agarwal">
-    <!-- The above meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <title>OYE-Complaint</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/animate.css">
-    <link href="css/stylesheet.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-fixed-top navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><img src=""></a>
-                <!-- <a class="navbar-brand" href="/">
-      <img src="https://media-exp1.licdn.com/dms/image/C510BAQHvIXbt2_zvUA/company-logo_200_200/0?e=2159024400&v=beta&t=QV1f4LqZOr1FbFZyDAIL7Huh955EH78rhMjluGgl4k0" alt="">
-    </a> -->
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li class="inactive"><a href="complaint.php">File a Complaint</a></li>
-                    <li class="inactive"><a href="login.php">Help</a></li>
-                    <li class="inactive"><a href="forum.html">Forum</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
+<%- include("partials/header")-%>
     <div class="cover">
         <!-- <div class="cover-text">
            <p class="subhead">Uphold the Law.</p>
@@ -101,25 +54,4 @@
     </div>
 
   </div>
-
-    <footer>
-      <div class="container-fluid">
-       <div class="row">
-           <div class="col-sm-4 col-sm-offset-4 foot">
-               <p>&copy; 2020 OYE</p>
-           </div>
-       </div>
-        </div>
-    </footer>
-
-    <script src="js/plugins/jquery.min.js"></script>
-    <script src="js/plugins/jquery.backstretch.js"></script>
-    <script src="js/plugins/wow.min.js"></script>
-    <script src="js/plugins/bootstrap.min.js"></script>
-    <script>
-        $(".cover").backstretch("img/22.png");
-        new WOW().init();
-    </script>
-
-  </body>
-</html>
+<%-include("partials/footer")-%>
