@@ -38,10 +38,19 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="/">Home</a></li>
+
+
                     <li class="inactive"><a href="/FileAComplaint">File a Complaint</a></li>
-                    <li class="inactive"><a href="login.php">Help</a></li>
-                    <li class="inactive"><a href="forum.html">Forum</a></li>
-                </ul>
+                    <li class="inactive"><a href="/help">Help</a></li>
+                    <li class="inactive"><a href="/forum">Forum</a></li>
+                    <%if  (typeof user =='undefined') {%>
+                    <li class="inactive"><a href="/Login">Login</a></li>
+                    <li class="inactive"><a href="/Signup">Signup</a></li>
+
+                    <%} else {%>
+                    <li class="inactive"><a href="/logout">Logout</a></li>
+                    <% } %>
+                    </ul>
             </div>
 
         </div>
