@@ -14,6 +14,13 @@ router.get('/', isLoggedIn, function(req, res) {
 
 });
 
+router.get('/organization', isLoggedIn, function(req, res) {
+  res.render('organization.ejs', {
+    user: req.user
+  });
+
+});
+
 function isLoggedIn(req, res, next) {
   try {
     if (req.isAuthenticated()) {
