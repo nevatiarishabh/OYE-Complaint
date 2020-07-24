@@ -15,6 +15,7 @@ const session = require('express-session');
 const http = require('http');
 const configDB = require('./config/database');
 const FileAComplaint = require('./routes/FileAComplaint');
+const organization = require('./routes/organization');
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
@@ -49,6 +50,7 @@ require('./routes/UserLogin')(app, passport);
 
 // app.use('/', indexRouter);
 app.use('/FileAComplaint', FileAComplaint);
+app.use('/organization', organization);
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {

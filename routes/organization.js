@@ -8,7 +8,7 @@ var {
 } = require('../model/user');
 
 router.get('/', isLoggedIn, function(req, res) {
-  res.render('FileAComplaint.ejs', {
+  res.render('organization', {
     user: req.user
   });
 
