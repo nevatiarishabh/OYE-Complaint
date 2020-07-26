@@ -22,7 +22,7 @@
 
       <div class="form-group">
                           <div class="row">
-                              <label class="col-md-4 text-right required" for="Category">Select main category</label>
+                              <label class="col-md-4 text-right required" for="Category">Select main category : </label>
                               <div class="col-md-6">
                                   <select autocomplete="off" class="form-control select2-hidden-accessible" id="Category_2" name="Category" data-select2-id="Category_2" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="2">Please select main category</option>
       <option value="62">Delay/ Non - Delivery/Abstraction of Postal Articles</option>
@@ -46,7 +46,7 @@
 
       <div class="form-group" data-select2-id="31">
     <div class="row">
-        <label class="col-md-4 text-right required" for="Category">Select next level category</label>
+        <label class="col-md-4 text-right required" for="Category">Select next level category : </label>
         <div class="col-md-6" data-select2-id="30">
             <select autocomplete="off" class="form-control select2-hidden-accessible" id="Category_3" name="Category" required="required" data-select2-id="Category_3" tabindex="-1" aria-hidden="true"><option value="" data-select2-id="28">Select next level category</option>
 <option value="89" data-select2-id="32">Delay in Pension</option>
@@ -59,6 +59,18 @@
         </div>
     </div>
 </div>
+
+<div>
+        <select>
+            <option>Choose Color</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+    </div>
+    <div class="red box">You have selected <strong>red option</strong> so i am here</div>
+    <div class="green box">You have selected <strong>green option</strong> so i am here</div>
+    <div class="blue box">You have selected <strong>blue option</strong> so i am here</div>
 
     </div>
 
@@ -76,5 +88,24 @@
 </div> %>
 
 </div>
-
+<%# <script>
+console.log($( "#myselect option:selected" ).text());
+console.log($("#Category_2").val());
+</script> %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$("document").ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
 <%-include("partials/footer")-%>

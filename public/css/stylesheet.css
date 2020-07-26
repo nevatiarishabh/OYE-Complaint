@@ -670,3 +670,14 @@ footer1{
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+.box{
+          color: #fff;
+          padding: 20px;
+          display: none;
+          margin-top: 20px;
+      }
+      .red{ background: #ff0000; }
+      .green{ background: #228B22; }
+      .blue{ background: #0000ff; }
