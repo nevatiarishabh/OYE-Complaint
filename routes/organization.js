@@ -19,7 +19,8 @@ router.get('/', isLoggedIn, function(req, res) {
 
 router.get('/post', isLoggedIn, function(req, res) {
   res.render('postMinistry', {
-    user: req.user
+    user: req.user,
+    Ministry: 'Posts'
   });
 
 });
