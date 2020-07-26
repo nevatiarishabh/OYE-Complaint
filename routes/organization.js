@@ -2,10 +2,13 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const router = express.Router();
 var {
   User
 } = require('../model/user');
+
+router.use(express.static(path.join(__dirname + '/../public')));
 
 router.get('/', isLoggedIn, function(req, res) {
   res.render('organization', {
@@ -15,7 +18,7 @@ router.get('/', isLoggedIn, function(req, res) {
 });
 
 router.get('/post', isLoggedIn, function(req, res) {
-  res.render('organization', {
+  res.render('postMinistry', {
     user: req.user
   });
 
