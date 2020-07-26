@@ -681,3 +681,8 @@ footer1{
       .red{ background: #ff0000; }
       .green{ background: #228B22; }
       .blue{ background: #0000ff; }
+
+
+.next-level-cat{
+    display: none;
+}
