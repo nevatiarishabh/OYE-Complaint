@@ -25,6 +25,14 @@ router.get('/post', isLoggedIn, function(req, res) {
 
 });
 
+router.get('/health', isLoggedIn, function(req, res) {
+  res.render('health', {
+    user: req.user,
+    Ministry: 'Health & Family Welfare'
+  });
+
+});
+
 function isLoggedIn(req, res, next) {
   try {
     if (req.isAuthenticated()) {
