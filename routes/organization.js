@@ -33,6 +33,14 @@ router.get('/health', isLoggedIn, function(req, res) {
 
 });
 
+router.get('/external_affair', isLoggedIn, function(req, res) {
+  res.render('external_affair', {
+    user: req.user,
+    Ministry: 'External Affair'
+  });
+
+});
+
 function isLoggedIn(req, res, next) {
   try {
     if (req.isAuthenticated()) {
