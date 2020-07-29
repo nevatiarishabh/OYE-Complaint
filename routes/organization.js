@@ -41,6 +41,14 @@ router.get('/external_affair', isLoggedIn, function(req, res) {
 
 });
 
+router.get('/banking', isLoggedIn, function(req, res) {
+  res.render('banking', {
+    user: req.user,
+    Ministry: 'Banking'
+  });
+
+});
+
 function isLoggedIn(req, res, next) {
   try {
     if (req.isAuthenticated()) {
