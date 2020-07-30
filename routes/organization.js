@@ -14,7 +14,6 @@ router.get('/', isLoggedIn, function(req, res) {
   res.render('organization', {
     user: req.user
   });
-
 });
 
 router.get('/post', isLoggedIn, function(req, res) {
@@ -22,7 +21,6 @@ router.get('/post', isLoggedIn, function(req, res) {
     user: req.user,
     Ministry: 'Posts'
   });
-
 });
 
 router.get('/health', isLoggedIn, function(req, res) {
@@ -30,7 +28,6 @@ router.get('/health', isLoggedIn, function(req, res) {
     user: req.user,
     Ministry: 'Health & Family Welfare'
   });
-
 });
 
 router.get('/external_affair', isLoggedIn, function(req, res) {
@@ -38,7 +35,6 @@ router.get('/external_affair', isLoggedIn, function(req, res) {
     user: req.user,
     Ministry: 'External Affair'
   });
-
 });
 
 router.get('/banking', isLoggedIn, function(req, res) {
@@ -46,7 +42,13 @@ router.get('/banking', isLoggedIn, function(req, res) {
     user: req.user,
     Ministry: 'Banking'
   });
+});
 
+router.get('/insurance', isLoggedIn, function(req, res){
+  res.render('insurance', {
+    user: req.user,
+    Ministry: 'Insurance'
+  });
 });
 
 function isLoggedIn(req, res, next) {
