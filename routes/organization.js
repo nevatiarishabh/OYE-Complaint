@@ -58,6 +58,28 @@ router.get('/telecoms', isLoggedIn, function(req, res){
   });
 });
 
+router.get('/road', isLoggedIn, function(req, res){
+  res.render('telecoms', {
+    user: req.user,
+    Ministry: 'Road Transport And Highways'
+  });
+});
+
+router.get('/schooledu', isLoggedIn, function(req, res){
+  res.render('schooledu', {
+    user: req.user,
+    Ministry: 'School Education and Literacy'
+  });
+});
+
+router.get('/petroleum', isLoggedIn, function(req, res){
+  res.render('petroleum', {
+    user: req.user,
+    Ministry: 'Petroleum and Natural Gas'
+  });
+});
+
+
 
 function isLoggedIn(req, res, next) {
   try {
