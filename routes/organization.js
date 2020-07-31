@@ -51,6 +51,14 @@ router.get('/insurance', isLoggedIn, function(req, res){
   });
 });
 
+router.get('/telecoms', isLoggedIn, function(req, res){
+  res.render('telecoms', {
+    user: req.user,
+    Ministry: 'Telecoms'
+  });
+});
+
+
 function isLoggedIn(req, res, next) {
   try {
     if (req.isAuthenticated()) {
