@@ -261,13 +261,24 @@
       </div>
   </div>
 
-    <!-- Next level category of 73  refer line 29 -->
-
-
-
+  <!--Grievance-->
+  <div class="form-group grievance">
+    <div class="row">
+        <label class="col-md-4 text-right required" for="Category">Describe your Grievance here :</label>
+        <div class="col-md-6">
+             <textarea autocomplete="off" class="form-control" cols="50" id="Remarks" maxlength="500" name="Remarks" placeholder="Please Enter Text of Grievance (Remarks)" required="required" rows="5" style="resize: none"></textarea><br>
+             <span class="text-info">Maximum 500 characters are allowed in description.</span>
+        </div>
     </div>
-
+    <div style="text-align: center;">
+    <button type="button" class="btn btn-primary">Submit</button>
   </div>
+</div>
+
+    </form>
+  </div>
+
+</div>
 
 
 
@@ -277,18 +288,34 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 $("document").ready(function(){
-    $("#Category_2").change(function(){
-        $(this).find("option:selected").each(function(){
-            var optionValue = $(this).attr("value");
-            if(optionValue){
-                $(".next-level-cat").not("." + optionValue).hide();
-                $("." + optionValue).show();
-            } else{
-                $(".next-level-cat").hide();
-            }
 
-        });
-    }).change();
+  $("#Category_2").change(function(){
+      $(this).find("option:selected").each(function(){
+          var optionValue = $(this).attr("value");
+          if(optionValue){
+              $(".next-level-cat").not("." + optionValue).hide();
+              $("." + optionValue).show();
+          } else{
+              $(".next-level-cat").hide();
+          }
+
+      });
+  }).change();
+
 });
+
+</script>
+<script>
+$("document").ready(function(){
+  $(".next-level-cat").change(function(){
+      $(this).find("option:selected").each(function(){
+        var optionValue = $(this).attr("value");
+        if(optionValue){
+          $(".grievance").show();
+        }
+        });
+
+  }).change();
+  });
 </script>
 <%-include("partials/footer")-%>

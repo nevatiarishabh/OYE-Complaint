@@ -10,6 +10,7 @@ var {
 
 router.use(express.static(path.join(__dirname + '/../public')));
 
+// GET ROUTES
 router.get('/', isLoggedIn, function(req, res) {
   res.render('organization', {
     user: req.user
@@ -79,6 +80,7 @@ router.get('/petroleum', isLoggedIn, function(req, res){
   });
 });
 
+//POST ROUTES
 
 
 function isLoggedIn(req, res, next) {

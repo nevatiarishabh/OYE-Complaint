@@ -1,7 +1,9 @@
 html,
 body,
 
-
+.grievance .input1{
+  height: 150px;
+}
 
 .cover{
     height:100%;
@@ -23,6 +25,7 @@ body,
 
 .card-body {
   padding: 20px;
+
 }
 
 .card-simple{
@@ -684,5 +687,9 @@ footer1{
 
 
 .next-level-cat{
+    display: none;
+}
+
+.grievance{
     display: none;
 }
