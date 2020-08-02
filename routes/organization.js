@@ -81,7 +81,11 @@ router.get('/petroleum', isLoggedIn, function(req, res){
 });
 
 //POST ROUTES
-
+router.post('/post1', isLoggedIn, function(req, res) {
+  console.log("Hello");
+  //console.log(req.body.Category);
+  //console.log(req.body.Remarks);
+});
 
 function isLoggedIn(req, res, next) {
   try {
