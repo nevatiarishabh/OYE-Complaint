@@ -7,6 +7,7 @@ const router = express.Router();
 var {
   User
 } = require('../model/user');
+var Grievance = require('../model/grievance');
 
 router.use(express.static(path.join(__dirname + '/../public')));
 
@@ -82,7 +83,14 @@ router.get('/petroleum', isLoggedIn, function(req, res){
 
 //POST ROUTES
 router.post('/post1', isLoggedIn, function(req, res) {
-  console.log(req.body);
+  //console.log(req.body);
+  var newcomplaint = new Grievance();
+  newcomplaint.Ministry = req.body.Mini_Value;
+  newcomplaint.Main_category = req.body.Main_Cat_Value;
+  newcomplaint.Sub_category = req.body.Sub_Cat_Value;
+  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.user = req.user._id;
+  newcomplaint.save();
 });
 
 function isLoggedIn(req, res, next) {
