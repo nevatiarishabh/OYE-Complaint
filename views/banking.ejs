@@ -558,47 +558,51 @@
     </div>
   </div>
 
-      </form>
+  <input type="text" id="Main_Cat_Value" style="visibility:hidden;" name="Main_Cat_Value" value="">
+  <input type="text" id="Sub_Cat_Value" style="visibility:hidden;" name="Sub_Cat_Value" value="">
+        </form>
+      </div>
+  
     </div>
-
+  
+  
+  
+  
   </div>
-
-
-
-
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-$("document").ready(function(){
-
-    $("#Category_2").change(function(){
-        $(this).find("option:selected").each(function(){
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+  $("document").ready(function(){
+  
+      $("#Category_2").change(function(){
+          $(this).find("option:selected").each(function(){
+              var optionValue = $(this).attr("value");
+              if(optionValue){
+                  $(".next-level-cat").not("." + optionValue).hide();
+                  $("." + optionValue).show();
+                  $("#Main_Cat_Value").attr("value", $(this).text());
+              } else{
+                  $(".next-level-cat").hide();
+              }
+  
+          });
+      }).change();
+  
+  });
+  
+  </script>
+  <script>
+  $("document").ready(function(){
+      $(".next-level-cat").change(function(){
+          $(this).find("option:selected").each(function(){
             var optionValue = $(this).attr("value");
             if(optionValue){
-                $(".next-level-cat").not("." + optionValue).hide();
-                $("." + optionValue).show();
-            } else{
-                $(".next-level-cat").hide();
+              $(".grievance").show();
+              $("#Sub_Cat_Value").attr("value", $(this).text());
             }
-
-        });
-    }).change();
-
-});
-
-</script>
-<script>
-$("document").ready(function(){
-    $(".next-level-cat").change(function(){
-        $(this).find("option:selected").each(function(){
-          var optionValue = $(this).attr("value");
-          if(optionValue){
-            $(".grievance").show();
-          }
-          });
-
-    }).change();
-    });
-</script>
-<%-include("partials/footer")-%>
+            });
+  
+      }).change();
+      });
+  </script>
+  <%-include("partials/footer")-%>
