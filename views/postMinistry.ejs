@@ -242,7 +242,7 @@
       <div class="row">
           <label class="col-md-4 text-right " for="Category">Describe your Grievance here :</label>
           <div class="col-md-6">
-               <textarea autocomplete="off" class="form-control" cols="50" id="Remarks" maxlength="500" name="Remarks" placeholder="Please Enter Text of Grievance (Remarks)"  rows="5" style="resize: none"></textarea><br>
+               <textarea autocomplete="off" class="form-control" cols="50" id="Remarks" maxlength="500" name="Grievance" placeholder="Please Enter Text of Grievance (Remarks)"  rows="5" style="resize: none"></textarea><br>
                <span class="text-info">Maximum 500 characters are allowed in description.</span>
           </div>
       </div>
@@ -251,6 +251,8 @@
     </div>
   </div>
 
+<input type="text" id="Main_Cat_Value" style="visibility:hidden;" name="Main_Cat_Value" value="">
+<input type="text" id="Sub_Cat_Value" style="visibility:hidden;" name="Sub_Cat_Value" value="">
       </form>
     </div>
 
@@ -271,6 +273,7 @@ $("document").ready(function(){
             if(optionValue){
                 $(".next-level-cat").not("." + optionValue).hide();
                 $("." + optionValue).show();
+                $("#Main_Cat_Value").attr("value", $(this).text());
             } else{
                 $(".next-level-cat").hide();
             }
@@ -288,6 +291,7 @@ $("document").ready(function(){
           var optionValue = $(this).attr("value");
           if(optionValue){
             $(".grievance").show();
+            $("#Sub_Cat_Value").attr("value", $(this).text());
           }
           });
 

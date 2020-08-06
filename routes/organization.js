@@ -82,8 +82,7 @@ router.get('/petroleum', isLoggedIn, function(req, res){
 
 //POST ROUTES
 router.post('/post1', isLoggedIn, function(req, res) {
-  // console.log(req.body.Main_Category);
-  console.log(req.body.Remarks);
+  console.log(req.body);
 });
 
 function isLoggedIn(req, res, next) {
