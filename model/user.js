@@ -12,6 +12,10 @@ const userSchema = new mongoose.Schema({
   loginType: {
     type: String
   },
+  isEmployee: {
+  default: false,
+  type: Boolean
+},
 });
 
 userSchema.methods.generateHash = function(password) {

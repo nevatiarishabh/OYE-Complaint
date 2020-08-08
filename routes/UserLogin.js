@@ -11,32 +11,60 @@ module.exports = function(app, passport) {
     });
   });
 
-  app.get('/login', function(req, res) {
+  app.get('/login-user', function(req, res) {
 
     // render the page and pass in any flash data if it exists
-    res.render('login.ejs', {
+    res.render('login-user.ejs', {
       message: req.flash('loginMessage')
     });
   });
 
-  app.post('/login', passport.authenticate('local-login', {
+  app.get('/login-emp', function(req, res) {
+
+    // render the page and pass in any flash data if it exists
+    res.render('login-emp.ejs', {
+      message: req.flash('loginMessage')
+    });
+  });
+
+  app.post('/login-user', passport.authenticate('local-login-user', {
     successRedirect: '/', // redirect to the secure profile section
-    failureRedirect: '/login', // redirect back to the signup page if there is an error
+    failureRedirect: '/login-user', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   }));
 
-  app.get('/signup', function(req, res) {
+  app.post('/login-emp', passport.authenticate('local-login-emp', {
+    successRedirect: '/', // redirect to the secure profile section
+    failureRedirect: '/login-emp', // redirect back to the signup page if there is an error
+    failureFlash: true // allow flash messages
+  }));
+
+  app.get('/signup-user', function(req, res) {
 
     // render the page and pass in any flash data if it exists
-    res.render('signup.ejs', {
+    res.render('signup-user.ejs', {
       message: req.flash('signupMessage')
     });
-    console.log(req.body);
   });
 
-  app.post('/signup', passport.authenticate('local-signup', {
+  app.get('/signup-emp', function(req, res) {
+
+    // render the page and pass in any flash data if it exists
+    res.render('signup-emp.ejs', {
+      message: req.flash('signupMessage')
+    });
+  
+  });
+
+  app.post('/signup-user', passport.authenticate('local-signup-user', {
     successRedirect: '/profile', // redirect to the secure profile section
-    failureRedirect: '/signup', // redirect back to the signup page if there is an error
+    failureRedirect: '/signup-user', // redirect back to the signup page if there is an error
+    failureFlash: true // allow flash messages
+  }));
+
+  app.post('/signup-emp', passport.authenticate('local-signup-emp', {
+    successRedirect: '/profile', // redirect to the secure profile section
+    failureRedirect: '/signup-emp', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   }));
 
