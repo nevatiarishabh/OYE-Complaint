@@ -12,11 +12,31 @@ var Grievance = require('../model/grievance');
 router.use(express.static(path.join(__dirname + '/../public')));
 
 // GET ROUTES
-router.get('/', isLoggedIn, function(req, res) {
-  res.render('organization', {
-    user: req.user
-  });
-});
+// router.get('/', isLoggedIn, function(req, res) {
+//   Grievance.find({},function(err,res){
+//     if (err)
+//       console.log(err);
+//     else{
+//       res.render('sample', {
+//         user: req.user,
+//         grievance : res
+//       });
+//     }
+//   });
+//
+// });
+
+router.route('/')
+  .get((req, res) => {
+    Grievance.find()
+      .then((result) => {
+        console.log(result);
+        res.render('sample', {
+          grievance:result,
+          user: req.user
+        });
+      }).catch((err) => console.log(err));
+  })
 
 router.get('/post', isLoggedIn, function(req, res) {
   res.render('postMinistry', {
@@ -81,18 +101,17 @@ router.get('/petroleum', isLoggedIn, function(req, res){
   });
 });
 
-//POST ROUTES
-router.post('/post1', isLoggedIn, function(req, res) {
-  //console.log(req.body);
-  var newcomplaint = new Grievance();
-  newcomplaint.Ministry = req.body.Mini_Value;
-  newcomplaint.Main_category = req.body.Main_Cat_Value;
-  newcomplaint.Sub_category = req.body.Sub_Cat_Value;
-  newcomplaint.Description = req.body.Grievance;
-  newcomplaint.user = req.user._id;
-  newcomplaint.save();
-  res.redirect('/');
-});
+// //POST ROUTES
+// router.post('/post1', isLoggedIn, function(req, res) {
+//   //console.log(req.body);
+//   var newcomplaint = new Grievance();
+//   newcomplaint.Ministry = req.body.Mini_Value;
+//   newcomplaint.Main_category = req.body.Main_Cat_Value;
+//   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
+//   newcomplaint.Description = req.body.Grievance;
+//   newcomplaint.user = req.user._id;
+//   newcomplaint.save();
+// });
 
 function isLoggedIn(req, res, next) {
   try {

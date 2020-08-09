@@ -16,6 +16,7 @@ const http = require('http');
 const configDB = require('./config/database');
 const FileAComplaint = require('./routes/FileAComplaint');
 const organization = require('./routes/organization');
+const organization_emp = require('./routes/organization-emp');
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
@@ -31,6 +32,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -51,6 +53,7 @@ require('./routes/UserLogin')(app, passport);
 // app.use('/', indexRouter);
 app.use('/FileAComplaint', FileAComplaint);
 app.use('/organization', organization);
+app.use('/organization-emp', organization_emp);
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {

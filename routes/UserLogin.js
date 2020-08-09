@@ -34,10 +34,12 @@ module.exports = function(app, passport) {
   }));
 
   app.post('/login-emp', passport.authenticate('local-login-emp', {
-    successRedirect: '/', // redirect to the secure profile section
+    successRedirect: '/organization-emp', // redirect to the secure profile section
     failureRedirect: '/login-emp', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   }));
+
+
 
   app.get('/signup-user', function(req, res) {
 
@@ -53,7 +55,7 @@ module.exports = function(app, passport) {
     res.render('signup-emp.ejs', {
       message: req.flash('signupMessage')
     });
-  
+
   });
 
   app.post('/signup-user', passport.authenticate('local-signup-user', {
