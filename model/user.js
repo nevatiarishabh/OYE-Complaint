@@ -16,6 +16,10 @@ const userSchema = new mongoose.Schema({
   default: false,
   type: Boolean
 },
+grievances: [{
+  type: mongoose.Types.ObjectId,
+  ref: 'Grievance'
+}],
 });
 
 userSchema.methods.generateHash = function(password) {
