@@ -119,7 +119,7 @@ function isLoggedIn(req, res, next) {
       req.isLogged = true;
       return next();
     }
-    res.redirect('/login');
+    res.redirect('/login-user');
   } catch (e) {
     console.log(e);
   }

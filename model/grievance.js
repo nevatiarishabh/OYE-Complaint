@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 
 const gSchema = new mongoose.Schema({
-  Ministry: String,                
+  Ministry: String,
   Main_category: String,
   Sub_category: String,
   Description: String,
@@ -12,6 +12,10 @@ const gSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: 'User'
   },
+  date_posted:{
+    type: Date
+  },
+  status: String,
 });
 
 

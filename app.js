@@ -16,6 +16,7 @@ const http = require('http');
 const configDB = require('./config/database');
 const FileAComplaint = require('./routes/FileAComplaint');
 const organization = require('./routes/organization');
+const myGrievances = require('./routes/myGrievances');
 const organization_emp = require('./routes/organization-emp');
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
@@ -54,7 +55,7 @@ require('./routes/UserLogin')(app, passport);
 app.use('/FileAComplaint', FileAComplaint);
 app.use('/organization', organization);
 app.use('/organization-emp', organization_emp);
-
+app.use('/myGrievances', myGrievances);
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   next(createError(404));

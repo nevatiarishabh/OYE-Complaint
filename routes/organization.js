@@ -4,9 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const router = express.Router();
-var {
-  User
-} = require('../model/user');
+var User = require('../model/user');
 var Grievance = require('../model/grievance');
 
 router.use(express.static(path.join(__dirname + '/../public')));
@@ -90,8 +88,25 @@ router.post('/post1', isLoggedIn, function(req, res) {
   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
   newcomplaint.Description = req.body.Grievance;
   newcomplaint.user = req.user._id;
+  newcomplaint.date_posted = Date.now();
+  newcomplaint.status = 'Submitted';
   newcomplaint.save();
-  res.redirect('/');
+  // User.find({_id:req.user._id},function(err,res1){
+  //   if (err)
+  //     console.log(err);
+  //   else{
+  //     if (typeof(req.user.grievances) == 'undefined') {
+  //     myGrievances = [];
+  //     myGrievances.push(newcomplaint);
+  //     req.user.grievances = myGrievances;
+  //     req.user.save();
+  //   } else {
+  //     req.user.grievances.push(newcomplaint);
+  //     req.user.save();
+  //   }
+  //   }
+  // });
+  res.redirect('/myGrievances');
 });
 
 function isLoggedIn(req, res, next) {
@@ -100,7 +115,7 @@ function isLoggedIn(req, res, next) {
       req.isLogged = true;
       return next();
     }
-    res.redirect('/login');
+    res.redirect('/login-user');
   } catch (e) {
     console.log(e);
   }
