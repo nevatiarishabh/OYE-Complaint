@@ -7,7 +7,7 @@
   <br><br>
   <% for(var i=0; i<grievance.length;i++){ %>
 
-  <form action="/organization-emp/submit/<%= i %>" method = "GET">
+  <form action="/organization-emp/submit/<%= grievance[i]._id %>" method = "GET">
   <div class="card">
     <h3 class="card-header">Ministry: <%= grievance[i].Ministry %></h3>
     <div class="card-body">
@@ -26,7 +26,7 @@
       <button type="submit" class="btn btn-primary myBtn">Update Status</button>
     </div>
   </div>
-</form>  
+</form>
 <% } %>
 
 <style>

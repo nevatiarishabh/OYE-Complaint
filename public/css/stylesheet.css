@@ -1,10 +1,12 @@
 html,
 body,
-
+.w3-light-grey{color:#000!important;background-color:#f1f1f1!important}
+.w3-round-xlarge{border-radius:16px}
 .grievance .input1{
   height: 150px;
 }
-
+.w3-container,.w3-panel{padding:0.01em 16px}
+.w3-blue,.w3-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
 .cover{
     height:100%;
 }

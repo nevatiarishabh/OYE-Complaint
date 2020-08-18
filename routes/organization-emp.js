@@ -38,8 +38,22 @@ router.route('/')
       }).catch((err) => console.log(err));
   })
 
-  router.get('/submit/:i', isLoggedIn, function(req, res) {
-    console.log(req.params.i);
+  router.get('/submit/:id', isLoggedIn, function(req, res) {
+    Grievance.findOne({_id:req.params.id}, function(err,res1){
+      if(err){
+        console.log(err);
+      }
+      else{
+        if(res1.status == 'Submitted')
+          res1.status='Reviewed';
+        else if(res1.status == 'Reviewed')
+          res1.status = 'In Progress';
+        else if(res1.status == 'In Progress')
+          res1.status = 'Resolved';
+        res1.save();
+      }
+    });
+    res.redirect('/organization-emp');
   });
 
 router.get('/post', isLoggedIn, function(req, res) {
