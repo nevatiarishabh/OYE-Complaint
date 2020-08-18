@@ -15,7 +15,10 @@ const gSchema = new mongoose.Schema({
   date_posted:{
     type: Date
   },
-  status: String,
+  status: {
+    type: String,
+    default: 'Submitted' 
+  }
 });
 
 

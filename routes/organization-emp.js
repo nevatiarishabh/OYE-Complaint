@@ -38,6 +38,10 @@ router.route('/')
       }).catch((err) => console.log(err));
   })
 
+  router.get('/submit/:i', isLoggedIn, function(req, res) {
+    console.log(req.params.i);
+  });
+
 router.get('/post', isLoggedIn, function(req, res) {
   res.render('postMinistry', {
     user: req.user,
