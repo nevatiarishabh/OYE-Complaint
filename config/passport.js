@@ -59,6 +59,7 @@ module.exports = function(passport) {
 
         process.nextTick(function() {
           const username = req.body.username;
+          const ministry = req.body.emp_mini;
           User.findOne({
             'Email': email
           }, function(err, user) {
@@ -73,6 +74,7 @@ module.exports = function(passport) {
               newUser.local.password = newUser.generateHash(password);
               newUser.loginType = 'local';
               newUser.isEmployee=true;
+              newUser.emp_ministry = ministry;
               newUser.save(function(err) {
                 if (err)
                   throw err;
