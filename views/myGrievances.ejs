@@ -22,10 +22,31 @@
       <p class="card-text" style="text-align:left;">
       <%= myGrievances[i].Description %>
       </p>
-    <button class="btn btn-primary myBtn">Show Progress</button>
-    </div>
+  <!--<button onclick="myFunction(<%= i %>)" class="btn btn-primary myBtn">Show Progress</button>-->
+        </div>
+    <div style="margin:0px 20px;" id='tests<%= i %>'>
+    <% if(myGrievances[i].status=='Submitted')  {%>
     <div class="w3-light-grey w3-round-xlarge">
-    <div class="w3-container w3-blue w3-round-xlarge" style="width:25%">25%</div>
+    <div class="w3-container w3-blue w3-round-xlarge" style="width:25%">Submitted</div>
+    <% } %>
+
+    <% if(myGrievances[i].status=='Reviewed')  {%>
+    <div class="w3-light-grey w3-round-xlarge">
+    <div class="w3-container w3-blue w3-round-xlarge" style="width:50%">Reviewed</div>
+    <% } %>
+
+    <% if(myGrievances[i].status=='In Progress')  {%>
+    <div class="w3-light-grey w3-round-xlarge">
+    <div class="w3-container w3-blue w3-round-xlarge" style="width:75%">In Progress</div>
+    <% } %>
+
+    <% if(myGrievances[i].status=='Resolved')  {%>
+    <div class="w3-light-grey w3-round-xlarge">
+    <div class="w3-container w3-blue w3-round-xlarge" style="width:100%">Resolved</div>
+    <% } %>
+    <br>
+    </div>
+
   </div>
   </div>
 <% } %>
@@ -109,5 +130,7 @@
 		    </div>
 		</form> %>
 </div>
+<script type="text/javascript">
 
+</script>
 <%-include("partials/footer")-%>
