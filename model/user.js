@@ -15,7 +15,11 @@ const userSchema = new mongoose.Schema({
   isEmployee: {
   default: false,
   type: Boolean
-},
+  },
+  emp_ministry: {
+    default: null,
+    type: String
+  }
 // grievances: [{
 //   type: mongoose.Types.ObjectId,
 //   ref: 'Grievance'
