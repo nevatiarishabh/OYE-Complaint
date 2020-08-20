@@ -7,6 +7,7 @@
   <div class="card">
     <h3 class="card-header">Grievance registration form</h3>
     <div class="card-body">
+      <form class="" action="/organization/schooledu1" method="post">
       <div class="card-simple">
         <h5 class="card-title" style="text-align:center;padding:10px; color:#086972;">Please note : If specific information related to a service is not available / known, select Others/Misc. option for lodging of grievance.</h5>
       </div>
@@ -294,18 +295,18 @@
   <input type="text" id="" style="visibility:hidden;" name="Mini_Value" value="<%= Ministry %>">
         </form>
       </div>
-  
+
     </div>
-  
-  
-  
-  
+
+
+
+
   </div>
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
   $("document").ready(function(){
-  
+
       $("#Category_2").change(function(){
           $(this).find("option:selected").each(function(){
               var optionValue = $(this).attr("value");
@@ -316,12 +317,12 @@
               } else{
                   $(".next-level-cat").hide();
               }
-  
+
           });
       }).change();
-  
+
   });
-  
+
   </script>
   <script>
   $("document").ready(function(){
@@ -333,9 +334,8 @@
               $("#Sub_Cat_Value").attr("value", $(this).text());
             }
             });
-  
+
       }).change();
       });
   </script>
 <%-include("partials/footer")-%>
-  
