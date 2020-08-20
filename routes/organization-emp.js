@@ -28,7 +28,7 @@ router.use(express.static(path.join(__dirname + '/../public')));
 
 router.route('/')
   .get((req, res) => {
-    Grievance.find()
+    Grievance.find({Ministry: req.user.emp_ministry})
       .then((result) => {
         console.log(result);
         res.render('sample', {
