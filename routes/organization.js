@@ -109,6 +109,20 @@ router.post('/post1', isLoggedIn, function(req, res) {
   res.redirect('/myGrievances');
 });
 
+router.post('/health1', isLoggedIn, function(req, res) {
+  //console.log(req.body);
+  var newcomplaint = new Grievance();
+  newcomplaint.Ministry = req.body.Mini_Value;
+  newcomplaint.Main_category = req.body.Main_Cat_Value;
+  newcomplaint.Sub_category = req.body.Sub_Cat_Value;
+  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.user = req.user._id;
+  newcomplaint.date_posted = Date.now();
+  newcomplaint.status = 'Submitted';
+  newcomplaint.save();
+  res.redirect('/myGrievances');
+});
+
 function isLoggedIn(req, res, next) {
   try {
     if (req.isAuthenticated()) {
