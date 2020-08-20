@@ -557,7 +557,7 @@
           </div>
       </div>
       <div style="text-align: center;">
-      <button type="button" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
 
@@ -566,18 +566,18 @@
   <input type="text" id="" style="visibility:hidden;" name="Mini_Value" value="<%= Ministry %>">
         </form>
       </div>
-  
+
     </div>
-  
-  
-  
-  
+
+
+
+
   </div>
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
   $("document").ready(function(){
-  
+
       $("#Category_2").change(function(){
           $(this).find("option:selected").each(function(){
               var optionValue = $(this).attr("value");
@@ -588,12 +588,12 @@
               } else{
                   $(".next-level-cat").hide();
               }
-  
+
           });
       }).change();
-  
+
   });
-  
+
   </script>
   <script>
   $("document").ready(function(){
@@ -605,7 +605,7 @@
               $("#Sub_Cat_Value").attr("value", $(this).text());
             }
             });
-  
+
       }).change();
       });
   </script>
