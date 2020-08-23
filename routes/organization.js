@@ -86,7 +86,7 @@ router.post('/post1', isLoggedIn, function(req, res) {
   newcomplaint.Ministry = req.body.Mini_Value;
   newcomplaint.Main_category = req.body.Main_Cat_Value;
   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
-  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.Description = req.body.Remarks;
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
@@ -115,7 +115,7 @@ router.post('/health1', isLoggedIn, function(req, res) {
   newcomplaint.Ministry = req.body.Mini_Value;
   newcomplaint.Main_category = req.body.Main_Cat_Value;
   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
-  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.Description = req.body.Remarks;
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
@@ -129,7 +129,7 @@ router.post('/banking1', isLoggedIn, function(req, res) {
   newcomplaint.Ministry = req.body.Mini_Value;
   newcomplaint.Main_category = req.body.Main_Cat_Value;
   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
-  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.Description = req.body.Remarks;
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
@@ -143,7 +143,7 @@ router.post('/insurance1', isLoggedIn, function(req, res) {
   newcomplaint.Ministry = req.body.Mini_Value;
   newcomplaint.Main_category = req.body.Main_Cat_Value;
   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
-  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.Description = req.body.Remarks;
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
@@ -157,7 +157,7 @@ router.post('/externalaffair1', isLoggedIn, function(req, res) {
   newcomplaint.Ministry = req.body.Mini_Value;
   newcomplaint.Main_category = req.body.Main_Cat_Value;
   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
-  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.Description = req.body.Remarks;
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
@@ -171,7 +171,7 @@ router.post('/petroleum1', isLoggedIn, function(req, res) {
   newcomplaint.Ministry = req.body.Mini_Value;
   newcomplaint.Main_category = req.body.Main_Cat_Value;
   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
-  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.Description = req.body.Remarks;
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
@@ -185,7 +185,7 @@ router.post('/road1', isLoggedIn, function(req, res) {
   newcomplaint.Ministry = req.body.Mini_Value;
   newcomplaint.Main_category = req.body.Main_Cat_Value;
   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
-  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.Description = req.body.Remarks;
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
@@ -199,7 +199,7 @@ router.post('/schooledu1', isLoggedIn, function(req, res) {
   newcomplaint.Ministry = req.body.Mini_Value;
   newcomplaint.Main_category = req.body.Main_Cat_Value;
   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
-  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.Description = req.body.Remarks;
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
@@ -213,7 +213,7 @@ router.post('/telecoms1', isLoggedIn, function(req, res) {
   newcomplaint.Ministry = req.body.Mini_Value;
   newcomplaint.Main_category = req.body.Main_Cat_Value;
   newcomplaint.Sub_category = req.body.Sub_Cat_Value;
-  newcomplaint.Description = req.body.Grievance;
+  newcomplaint.Description = req.body.Remarks;
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
