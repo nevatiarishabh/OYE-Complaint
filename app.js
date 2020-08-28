@@ -30,7 +30,8 @@ mongoose.connect(configDB.url, {
 require('./config/passport')(passport);
 
 var app = express();
-
+// var http = require('http').createServer(app);
+// var io = require('socket.io')(http);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -73,6 +74,22 @@ app.use('/chat', chat);
 //   res.status(err.status || 500);
 //   res.render('error');
 // });
+
+app.get('/chat1', (req, res) => {
+  res.redirect('http://localhost:3000/');
+});
+//
+// io.on('connection', (socket) => {
+//   console.log('a user connected');
+// });
+
+var proxy = require('express-http-proxy');
+
+// app.use('/chat1', proxy('3000', {
+//     forwardPath: function (req, res) {
+//       return '/path/where/you/want/to/proxy/' + req.url
+//     }
+// }))
 
 app.listen(3002, function(err) {
   console.log('Server started on 3002');
