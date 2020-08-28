@@ -76,14 +76,14 @@ app.use('/chat', chat);
 // });
 
 app.get('/chat1', (req, res) => {
-  res.redirect('http://localhost:3000/');
+  res.redirect('http://localhost:3000/zzz');
 });
 //
 // io.on('connection', (socket) => {
 //   console.log('a user connected');
 // });
 
-var proxy = require('express-http-proxy');
+// var proxy = require('express-http-proxy');
 
 // app.use('/chat1', proxy('3000', {
 //     forwardPath: function (req, res) {

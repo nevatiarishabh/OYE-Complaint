@@ -18,6 +18,8 @@ var Message = mongoose.model('Message',{
 
 var dbUrl = process.env.ATLAS_URL
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 app.get('/messages', (req, res) => {
   Message.find({},(err, messages)=> {
     res.send(messages);
@@ -57,7 +59,9 @@ app.post('/messages', async (req, res) => {
 
 })
 
-
+app.get('/zzz', (req, res) => {
+  res.render('index2.ejs');
+});
 
 io.on('connection', () =>{
   console.log('a user is connected')
