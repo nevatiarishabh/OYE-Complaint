@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const router = express.Router();
 var User = require('../model/user');
-var Message = require('../model/messsage');
+var Message = require('../model/message');
+// var Message = require('../model/messsage');
 
 router.use(express.static(path.join(__dirname + '/../public')));
 
@@ -21,7 +22,7 @@ router.get('/message', isLoggedIn, function(req, res) {
 
 router.post('/message', isLoggedIn, function(req, res) {
   var newmessage = new Message();
-  
+
   newmessage.save((err) =>{
     if(err)
       sendStatus(500);
