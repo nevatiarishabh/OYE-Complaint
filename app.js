@@ -18,6 +18,7 @@ const FileAComplaint = require('./routes/FileAComplaint');
 const organization = require('./routes/organization');
 const myGrievances = require('./routes/myGrievances');
 const organization_emp = require('./routes/organization-emp');
+const chat = require('./routes/chat');
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
@@ -56,6 +57,7 @@ app.use('/FileAComplaint', FileAComplaint);
 app.use('/organization', organization);
 app.use('/organization-emp', organization_emp);
 app.use('/myGrievances', myGrievances);
+app.use('/chat', chat);
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   next(createError(404));
