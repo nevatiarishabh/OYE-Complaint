@@ -16,7 +16,9 @@
  
 </div>
 </div>
-<!-- <script>
+
+<script src=”/socket.io/socket.io.js”></script>
+<script>
 $(() => {
     $("#send").click(()=>{
        sendMessage({
@@ -27,20 +29,24 @@ $(() => {
     })
     
 function addMessages(message){
-   $(“#messages”).append(`
+   $("#messages").append(`
       <h4> ${message.name} </h4>
       <p>  ${message.message} </p>`)
    }
    
 function getMessages(){
-  $.get(‘http://localhost:3000/messages', (data) => {
+  $.get('http://localhost:3002/chat/message', (data) => {
    data.forEach(addMessages);
    })
  }
  
 function sendMessage(message){
-   $.post(‘http://localhost:3000/messages', message)
+   $.post('http://localhost:3002/chat/message', message)
  }
-</script> -->
+
+var socket = io();
+
+socket.on('message', addMessages)
+</script>
 
 <%-include("partials/footer")-%>
