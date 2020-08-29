@@ -20,6 +20,7 @@
         <br>
         <button id="send" class="btn btn-success">Send</button>
     </div>
+    <!-- <input type="text" id="type_of_ministry" style="visibility:hidden" name="" value="<%= Ministry %>"> -->
     <div id="messages">
 
     </div>
@@ -41,13 +42,13 @@
     }
 
     function getMessages(){
-      $.get('http://localhost:3000/messages', (data) => {
+      $.get('http://localhost:3000/messages/<%= Ministry %>', (data) => {
         data.forEach(addMessages);
       })
     }
 
     function sendMessage(message){
-      $.post('http://localhost:3000/messages', message)
+      $.post('http://localhost:3000/messages/<%= Ministry %>', message)
     }
 </script>
 </body>

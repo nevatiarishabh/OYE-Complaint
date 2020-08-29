@@ -27,6 +27,8 @@ mongoose.connect(configDB.url, {
   useUnifiedTopology: true
 });
 
+
+
 require('./config/passport')(passport);
 
 var app = express();
@@ -75,9 +77,10 @@ app.use('/chat', chat);
 //   res.render('error');
 // });
 
-app.get('/chat1', (req, res) => {
-  res.redirect('http://localhost:3000/chatrooms');
-});
+// app.get('/chat1', (req, res) => {
+//   string= req.user._id
+//   res.redirect('http://localhost:3000/'+string);
+// });
 //
 // io.on('connection', (socket) => {
 //   console.log('a user connected');

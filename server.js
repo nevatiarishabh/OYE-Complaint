@@ -5,6 +5,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose');
+const chat = require('./routes/chat');
 const path = require('path');
 
 app.use(express.static(__dirname));
@@ -13,18 +14,19 @@ app.use(bodyParser.urlencoded({extended: false}));
 // app.use(express.static(path.join(__dirname + '/../public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-var Message = mongoose.model('Message',{
-  name : String,
-  message : String
-})
+var Message = require('./model/message');
+// var Message = mongoose.model('Message',{
+//   name : String,
+//   message : String
+// })
 
 var dbUrl = process.env.ATLAS_URL
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get('/messages', (req, res) => {
-  Message.find({},(err, messages)=> {
+app.get('/messages/:type_of_ministry', (req, res) => {
+    console.log(req.params.type_of_ministry)
+  Message.find({type_of_ministry:req.params.type_of_ministry},(err, messages)=> {
     res.send(messages);
   })
 })
@@ -38,11 +40,15 @@ app.get('/messages/:user', (req, res) => {
 })
 
 
-app.post('/messages', async (req, res) => {
+app.post('/messages/:type_of_ministry', async (req, res) => {
+  console.log(typeof(req.params.type_of_ministry))
   try{
-    var message = new Message(req.body);
+    var newmessage = new Message();
+    newmessage.name = req.body.name
+    newmessage.message = req.body.message
+    newmessage.type_of_ministry = req.params.type_of_ministry;
 
-    var savedMessage = await message.save()
+    var savedMessage = await newmessage.save()
       console.log('saved');
 
     var censored = await Message.findOne({message:'badword'});
@@ -66,7 +72,10 @@ const chatrooms = require('./routes/chatrooms');
 //   res.render('organization_chat.ejs');
 // });
 app.use('/chatrooms',chatrooms);
-
+app.use('/chat', chat);
+// app.get('/:userid',function(req,res){
+//   console.log(req.params.userid)
+// });
 io.on('connection', () =>{
   console.log('a user is connected')
 })

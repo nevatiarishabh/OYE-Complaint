@@ -5,35 +5,27 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const router = express.Router();
 var User = require('../model/user');
-var Message = require('../model/message');
-var http = require('http').Server(router);
-var io = require('socket.io')(http);
 
-io.on('connection', () =>{
-    console.log('a user is connected')
-})
 
-router.use(express.static(path.join(__dirname + '/../public')));
-
-router.get('/', isLoggedIn, function(req, res) {
-  res.render('chat.ejs');
+router.get('/', isLoggedIn, (req, res) => {
+  string= req.user._id
+  res.redirect('http://localhost:3000/chat/'+string);
 });
 
-router.get('/message', isLoggedIn, function(req, res) {
-    Message.find({},(err, messages)=> {
-        res.send(messages);
-      })
+router.get('/:userid', (req, res) => {
+  // console.log(req.params.userid)
+  User.findOne({
+    '_id': req.params.userid
+  }, function(err, user) {
+    if (err) {
+      res.send(err);
+    } else {
+      req.user = user
+    }
+  });
+res.redirect('/chatrooms');
 });
 
-router.post('/message', isLoggedIn, function(req, res) {
-    var message = new Message(req.body);
-    message.save((err) =>{
-      if(err)
-        sendStatus(500);
-      io.emit('message', req.body);
-      res.sendStatus(200);
-    })
-})
 
 function isLoggedIn(req, res, next) {
   try {
