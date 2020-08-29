@@ -9,7 +9,10 @@ const path = require('path');
 
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}));
+// app.use(express.static(path.join(__dirname + '/../public')));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 var Message = mongoose.model('Message',{
   name : String,
@@ -58,10 +61,11 @@ app.post('/messages', async (req, res) => {
   }
 
 })
-
-app.get('/zzz', (req, res) => {
-  res.render('index2.ejs');
-});
+const chatrooms = require('./routes/chatrooms');
+// app.get('/zzz', (req, res) => {
+//   res.render('organization_chat.ejs');
+// });
+app.use('/chatrooms',chatrooms);
 
 io.on('connection', () =>{
   console.log('a user is connected')

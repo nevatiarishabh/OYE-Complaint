@@ -76,7 +76,7 @@ app.use('/chat', chat);
 // });
 
 app.get('/chat1', (req, res) => {
-  res.redirect('http://localhost:3000/zzz');
+  res.redirect('http://localhost:3000/chatrooms');
 });
 //
 // io.on('connection', (socket) => {

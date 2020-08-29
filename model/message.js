@@ -9,7 +9,8 @@ const messageSchema = new mongoose.Schema({
     ref: 'User'
   },
   name : String,
-  message : String
+  message : String,
+  type_of_ministry: String
 });
 
 module.exports = mongoose.model("Message", messageSchema);
