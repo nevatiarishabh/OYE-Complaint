@@ -14,65 +14,65 @@ router.get('/',function(req,res){
     res.render("organization_chat.ejs");
 });
 
-router.get('/post', function(req, res) {
+router.get('/post/:userid', function(req, res) {
     res.render('index2.ejs', {
-      user: req.user,
+      userid: req.params.userid,
       Ministry: 'Posts'
     });
   });
 
-  router.get('/health', function(req, res) {
+  router.get('/health/:userid', function(req, res) {
     res.render('index2.ejs', {
-      user: req.user,
+      userid: req.params.userid,
       Ministry: 'Health & Family Welfare'
     });
   });
 
-  router.get('/external_affair', function(req, res) {
+  router.get('/external_affair/:userid', function(req, res) {
     res.render('index2.ejs', {
-      user: req.user,
+      userid: req.params.userid,
       Ministry: 'External Affair'
     });
   });
 
-  router.get('/banking', function(req, res) {
+  router.get('/banking/:userid', function(req, res) {
     res.render('index2.ejs', {
-      user: req.user,
+      userid: req.params.userid,
       Ministry: 'Banking'
     });
   });
 
-  router.get('/insurance', function(req, res){
+  router.get('/insurance/:userid', function(req, res){
     res.render('index2.ejs', {
-      user: req.user,
+      userid: req.params.userid,
       Ministry: 'Insurance'
     });
   });
 
-  router.get('/telecoms', function(req, res){
+  router.get('/telecoms/:userid', function(req, res){
     res.render('index2.ejs', {
-      user: req.user,
+      userid: req.params.userid,
       Ministry: 'Telecoms'
     });
   });
 
-  router.get('/road', function(req, res){
+  router.get('/road/:userid', function(req, res){
     res.render('index2.ejs', {
-      user: req.user,
+      userid: req.params.userid,
       Ministry: 'Road Transport And Highways'
     });
   });
 
-  router.get('/schooledu', function(req, res){
+  router.get('/schooledu/:userid', function(req, res){
     res.render('index2.ejs', {
-      user: req.user,
+      userid: req.params.userid,
       Ministry: 'School Education and Literacy'
     });
   });
 
-  router.get('/petroleum', function(req, res){
+  router.get('/petroleum/:userid', function(req, res){
     res.render('index2.ejs', {
-      user: req.user,
+      userid: req.params.userid,
       Ministry: 'Petroleum and Natural Gas'
     });
   });

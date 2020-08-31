@@ -14,13 +14,13 @@
     <div class="jumbotron">
         <h1 class="display-4">Send Message</h1>
         <br>
-        <input id = "name" class="form-control" placeholder="Name">
-        <br>
+        <!-- <input id = "name" class="form-control" placeholder="Name">
+        <br> -->
         <textarea id = "message" class="form-control" placeholder="Your Message Here"></textarea>
         <br>
         <button id="send" class="btn btn-success">Send</button>
     </div>
-    <!-- <input type="text" id="type_of_ministry" style="visibility:hidden" name="" value="<%= Ministry %>"> -->
+    <input type="text" id="userName" style="visibility:hidden" name="" value="<%= userid %>">
     <div id="messages">
 
     </div>
@@ -29,7 +29,7 @@
    var socket = io();
     $(() => {
         $("#send").click(()=>{
-            sendMessage({name: $("#name").val(), message: $("#message").val()});
+            sendMessage({userName: $("#userName").val(), message: $("#message").val()});
         })
 
         getMessages()
@@ -38,7 +38,7 @@
     socket.on('message', addMessages)
 
     function addMessages(message){
-        $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+        $("#messages").append(`<h4> ${message.userName} </h4> <p> ${message.message} </p>`)
     }
 
     function getMessages(){

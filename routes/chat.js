@@ -6,6 +6,7 @@ const path = require('path');
 const router = express.Router();
 var User = require('../model/user');
 
+router.use(express.static(path.join(__dirname + '/../public')));
 
 router.get('/', isLoggedIn, (req, res) => {
   string= req.user._id
@@ -21,9 +22,10 @@ router.get('/:userid', (req, res) => {
       res.send(err);
     } else {
       req.user = user
+      res.render("organization_chat.ejs", {userid:req.user.Name});
     }
   });
-res.redirect('/chatrooms');
+// res.redirect('/chatrooms');
 });
 
 
