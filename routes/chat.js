@@ -13,6 +13,10 @@ router.get('/', isLoggedIn, (req, res) => {
   res.redirect('http://localhost:3000/chat/'+string);
 });
 
+router.get('/notloggedIn', isLoggedIn, (req, res) => {
+  
+});
+
 router.get('/:userid', (req, res) => {
   // console.log(req.params.userid)
   User.findOne({
