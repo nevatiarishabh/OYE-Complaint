@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +10,58 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <script src="/socket.io/socket.io.js"></script>
 </head>
+<style media="screen">
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 80%;
+  margin: auto;
+}
+
+.card-header {
+  background-color: #87dfd6;
+    height: 6rem;
+    padding: 15px;
+}
+
+.card-body {
+  padding: 20px;
+
+}
+
+.card-simple{
+   border-radius: 5px;
+  background-color: #cbeaed;
+  transition: 0.3s;
+  width: 80%;
+  height: 4rem;
+  margin: auto;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+.card .card-title {
+  font-weight: bold;
+  text-align: center;
+}
+.card .row {
+  margin: 35px 0;
+}
+</style>
 <body>
 <div class="container">
     <br>
+
     <div class="jumbotron">
         <h1 class="display-4">Send Message</h1>
         <br>
@@ -21,8 +72,10 @@
         <button id="send" class="btn btn-success">Send</button>
     </div>
     <input type="text" id="userName" style="visibility:hidden" name="" value="<%= userid %>">
+    <div class="card" style="width:100%;height: 500px;overflow: auto;">
     <div id="messages">
 
+    </div>
     </div>
 </div>
 <script>
@@ -53,3 +106,4 @@
 </script>
 </body>
 </html>
+<%-include("partials/footer")-%>
