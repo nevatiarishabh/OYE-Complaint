@@ -8,6 +8,7 @@ var {
   User
 } = require('../model/user');
 var Grievance = require('../model/grievance');
+const user = require('../model/user');
 
 router.use(express.static(path.join(__dirname + '/../public')));
 
@@ -54,6 +55,13 @@ router.route('/')
       }
     });
     res.redirect('/organization-emp');
+  });
+
+  router.post('/user', isLoggedIn, function(req, res){
+    console.log(req.body.userdetail);
+    user.findOne({_id: req.body.userdetail}, function(err, res1){
+      res.render('userDetail', {user: res1});
+    });
   });
 
 router.get('/post', isLoggedIn, function(req, res) {

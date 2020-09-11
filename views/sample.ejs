@@ -7,8 +7,9 @@
   <br><br>
   <% for(var i=0; i<grievance.length;i++){ %>
 
-  <form action="/organization-emp/submit/<%= grievance[i]._id %>" method = "GET">
-  <div class="card">
+    <div class="card">
+    <form action="/organization-emp/submit/<%= grievance[i]._id %>" method = "GET">
+  
     <h3 class="card-header">Ministry: <%= grievance[i].Ministry %></h3>
     <div class="card-body">
       <h5 class="card-title" style="text-align:left;">Main Category: <%= grievance[i].Main_category %></h5>
@@ -24,9 +25,14 @@
       <%= grievance[i].Description %>
       </p>
       <button type="submit" class="btn btn-primary myBtn">Update Status</button>
-    </div>
-  </div>
 </form>
+<br><br>
+<form action="/organization-emp/user" method = "POST">
+  <button type="submit" class="btn btn-primary myBtn">User Details</button>
+  <input type="text" value="<%= grievance[i].user %>" name="userdetail" style="visibility: hidden;">
+</form>
+</div>
+</div>
 <% } %>
 
 <style>
