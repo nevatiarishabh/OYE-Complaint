@@ -19,6 +19,7 @@ const organization = require('./routes/organization');
 const myGrievances = require('./routes/myGrievances');
 const organization_emp = require('./routes/organization-emp');
 const chat = require('./routes/chat');
+const multer = require('multer');
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
