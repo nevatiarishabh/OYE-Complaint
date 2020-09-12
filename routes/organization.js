@@ -6,9 +6,29 @@ const path = require('path');
 const router = express.Router();
 var User = require('../model/user');
 var Grievance = require('../model/grievance');
+const multer = require('multer');
 
 router.use(express.static(path.join(__dirname + '/../public')));
 
+var storage = multer.diskStorage({
+  destination: function(req, file, callback) {
+    if (file.mimetype === 'application/pdf') {
+      callback(null, './uploads');
+    } else {
+      callback(new Error('file type not supported'), false);
+    }
+  },
+  filename: function(req, file, callback) {
+    if (file.mimetype === 'application/pdf') {
+      callback(null, file.fieldname + '-' + Date.now() + '.pdf');
+    } else {
+      callback(new Error('file type not supported'), false);
+    }
+  }
+});
+var upload = multer({
+  storage: storage
+});
 // GET ROUTES
 router.get('/', isLoggedIn, function(req, res) {
   res.render('organization', {
@@ -80,7 +100,8 @@ router.get('/petroleum', isLoggedIn, function(req, res){
 });
 
 //POST ROUTES
-router.post('/post1', isLoggedIn, function(req, res) {
+router.post('/post1', upload.single('uploadfile'),isLoggedIn, function(req, res) {
+  const file = req.file;
   //console.log(req.body);
   var newcomplaint = new Grievance();
   newcomplaint.Ministry = req.body.Mini_Value;
@@ -90,6 +111,7 @@ router.post('/post1', isLoggedIn, function(req, res) {
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
+  newcomplaint.uploadfile = file;
   newcomplaint.save();
   // User.find({_id:req.user._id},function(err,res1){
   //   if (err)

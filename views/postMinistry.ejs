@@ -7,7 +7,7 @@
   <div class="card">
     <h3 class="card-header">Grievance registration form</h3>
     <div class="card-body">
-      <form class="" action="/organization/post1" method="post">
+      <form class="" action="/organization/post1" enctype="multipart/form-data" method="post">
 
 
       <div class="card-simple">
@@ -250,7 +250,8 @@
       <div class="row">
           <label class="col-md-4 text-right " for="Category">Attach Files related to Grievance :</label>
           <div class="col-md-6">
-<input type="file" id="myfile" name="myfile">
+<%# <input type="file" id="myfile" name="uploadfile"> %>
+<input name="uploadfile" type="file" multiple="" class="inputFileHidden">
           </div>
 
       </div>

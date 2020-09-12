@@ -2,7 +2,7 @@
 
 <div class="type" class="complaintType">
   <br><br>
- 
+
   <h3>User Details:</h3>
   <br><br>
 
@@ -11,7 +11,15 @@
       <h5 class="card-title" style="text-align:left;">User Name: <%= user.Name %></h5>
       <br>
       <h5 class="card-title" style="text-align:left;">User Email: <%= user.Email %></h5>
+      
     </div>
   </div>
 
+  <script>
+  function openPdf(input){
+    let omyFrame = document.getElementById("myFrame");
+    omyFrame.style.display="block";
+    omyFrame.src = '../'+input.id;
+  }
+  </script>
 <%-include("partials/footer")-%>
