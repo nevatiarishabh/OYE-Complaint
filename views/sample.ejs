@@ -24,10 +24,11 @@
       <p class="card-text" style="text-align:left;">
       <%= grievance[i].Description %>
       </p>
-      <div class="col-md-3">
+
         <iframe id="myFrame" style="display:none" width="600" height="300"></iframe>
-        <input id='<%=grievance[i].uploadfile.filename%>' type="button" value="Open Uploaded File" onclick="openPdf(this)" />
-      </div>
+        <input id='<%=grievance[i].uploadfile.filename%>' type="button" class="btn btn-primary myBtn" value="Open Uploaded File" onclick="openPdf(this)" />
+      
+      <br><br>
       <button type="submit" class="btn btn-primary myBtn">Update Status</button>
 </form>
 <br><br>

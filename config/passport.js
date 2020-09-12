@@ -20,10 +20,11 @@ module.exports = function(passport) {
 
   passport.use('local-signup-user', new localStrategy_user({
       usernameField: 'email',
+      aadhar_number:'aadhar_number',
       passwordField: 'password',
       passReqToCallback: true
     },
-    function(req, email, password, done) {
+    function(req,aadhar_number, email, password, done) {
 
       process.nextTick(function() {
         const username = req.body.username;
@@ -38,6 +39,7 @@ module.exports = function(passport) {
             var newUser = new User();
             newUser.Email = email;
             newUser.Name = username;
+            newUser.aadhar_number=aadhar_number;
             newUser.local.password = newUser.generateHash(password);
             newUser.loginType = 'local';
             newUser.save(function(err) {

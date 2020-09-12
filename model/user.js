@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
   emp_ministry: {
     default: null,
     type: String
+  },
+  aadhar_number:{
+    type: Number,
+    required: true
   }
 // grievances: [{
 //   type: mongoose.Types.ObjectId,
