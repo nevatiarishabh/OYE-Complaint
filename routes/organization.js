@@ -131,7 +131,8 @@ router.post('/post1', upload.single('uploadfile'),isLoggedIn, function(req, res)
   res.redirect('/myGrievances');
 });
 
-router.post('/health1', isLoggedIn, function(req, res) {
+router.post('/health1', upload.single('uploadfile'),isLoggedIn, function(req, res) {
+  const file = req.file;
   //console.log(req.body);
   var newcomplaint = new Grievance();
   newcomplaint.Ministry = req.body.Mini_Value;
@@ -142,10 +143,12 @@ router.post('/health1', isLoggedIn, function(req, res) {
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
   newcomplaint.save();
+    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
-router.post('/banking1', isLoggedIn, function(req, res) {
+router.post('/banking1',  upload.single('uploadfile'),isLoggedIn, function(req, res) {
+  const file = req.file;
   //console.log(req.body);
   var newcomplaint = new Grievance();
   newcomplaint.Ministry = req.body.Mini_Value;
@@ -156,11 +159,12 @@ router.post('/banking1', isLoggedIn, function(req, res) {
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
   newcomplaint.save();
+    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
-router.post('/insurance1', isLoggedIn, function(req, res) {
-  //console.log(req.body);
+router.post('/insurance1',  upload.single('uploadfile'),isLoggedIn, function(req, res) {
+  const file = req.file;
   var newcomplaint = new Grievance();
   newcomplaint.Ministry = req.body.Mini_Value;
   newcomplaint.Main_category = req.body.Main_Cat_Value;
@@ -170,10 +174,12 @@ router.post('/insurance1', isLoggedIn, function(req, res) {
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
   newcomplaint.save();
+    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
-router.post('/externalaffair1', isLoggedIn, function(req, res) {
+router.post('/externalaffair1',  upload.single('uploadfile'),isLoggedIn, function(req, res) {
+  const file = req.file;
   //console.log(req.body);
   var newcomplaint = new Grievance();
   newcomplaint.Ministry = req.body.Mini_Value;
@@ -184,10 +190,12 @@ router.post('/externalaffair1', isLoggedIn, function(req, res) {
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
   newcomplaint.save();
+    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
-router.post('/petroleum1', isLoggedIn, function(req, res) {
+router.post('/petroleum1', upload.single('uploadfile'),isLoggedIn, function(req, res) {
+  const file = req.file;
   //console.log(req.body);
   var newcomplaint = new Grievance();
   newcomplaint.Ministry = req.body.Mini_Value;
@@ -198,10 +206,12 @@ router.post('/petroleum1', isLoggedIn, function(req, res) {
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
   newcomplaint.save();
+    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
-router.post('/road1', isLoggedIn, function(req, res) {
+router.post('/road1', upload.single('uploadfile'),isLoggedIn, function(req, res) {
+  const file = req.file;
   //console.log(req.body);
   var newcomplaint = new Grievance();
   newcomplaint.Ministry = req.body.Mini_Value;
@@ -212,10 +222,12 @@ router.post('/road1', isLoggedIn, function(req, res) {
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
   newcomplaint.save();
+    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
-router.post('/schooledu1', isLoggedIn, function(req, res) {
+router.post('/schooledu1',  upload.single('uploadfile'),isLoggedIn, function(req, res) {
+  const file = req.file;
   //console.log(req.body);
   var newcomplaint = new Grievance();
   newcomplaint.Ministry = req.body.Mini_Value;
@@ -226,10 +238,12 @@ router.post('/schooledu1', isLoggedIn, function(req, res) {
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
   newcomplaint.save();
+    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
-router.post('/telecoms1', isLoggedIn, function(req, res) {
+router.post('/telecoms1',  upload.single('uploadfile'),isLoggedIn, function(req, res) {
+  const file = req.file;
   //console.log(req.body);
   var newcomplaint = new Grievance();
   newcomplaint.Ministry = req.body.Mini_Value;
@@ -240,6 +254,7 @@ router.post('/telecoms1', isLoggedIn, function(req, res) {
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
   newcomplaint.save();
+    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
