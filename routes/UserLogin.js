@@ -59,13 +59,13 @@ module.exports = function(app, passport) {
   });
 
   app.post('/signup-user', passport.authenticate('local-signup-user', {
-    successRedirect: '/profile', // redirect to the secure profile section
+    successRedirect: '/', // redirect to the secure profile section
     failureRedirect: '/signup-user', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   }));
 
   app.post('/signup-emp', passport.authenticate('local-signup-emp', {
-    successRedirect: '/profile', // redirect to the secure profile section
+    successRedirect: '/organization-emp', // redirect to the secure profile section
     failureRedirect: '/signup-emp', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   }));

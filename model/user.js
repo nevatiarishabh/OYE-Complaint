@@ -22,7 +22,6 @@ const userSchema = new mongoose.Schema({
   },
   aadhar_number:{
     type: Number,
-    required: true
   }
 // grievances: [{
 //   type: mongoose.Types.ObjectId,
