@@ -96,6 +96,9 @@ app.use('/chat', chat);
 //     }
 // }))
 
+app.get('/help', function (req,res){
+  res.render('help');
+});
 app.listen(3002, function(err) {
   console.log('Server started on 3002');
 });
