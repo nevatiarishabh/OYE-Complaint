@@ -1,4 +1,85 @@
-<%-include("partials/header")-%>
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dreams Template">
+    <meta name="keywords" content="Dreams, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OYE-Complaint</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link href="css/stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="header__logo">
+                        <a href="http://localhost:3002"><img src="img/oyelogo.jpg" style="height:40px" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-9">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                          <li class="inactive"><a href="http://localhost:3002">Home</a></li>
+                  <li class="inactive"><a href="http://localhost:3002/FileAComplaint">File a Complaint</a></li>
+                  <li class="inactive"><a href="http://localhost:3002/help">Help</a></li>
+
+
+                  <li class="inactive"><a href="http://localhost:3002/myGrievances">My Grievances</a></li>
+
+                
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-2 col-md-1">
+                    <div class="header__right">
+                        <div class="header__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                        <div class="header__right__search">
+                            <a href="#" class="search-switch"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+
 
 <br><br><br><br><br>
 
@@ -8,7 +89,7 @@
 <div class="row">
   <a href="/chatrooms/post/<%= userid%>">
   <div class="col-lg-4 col-md-3 col-sm-6 lodgeMain">
-    <div class="card" style="width: 11.5rem;">
+    <div class="card" style="width: 8rem; margin:0 40px">
     <img class="card-img-top" src="/img/dpost.png" alt="Card image cap">
     <div class="card-body">
     <h5 class="card-title">Posts (D/o Telecom)</h5>
@@ -21,7 +102,7 @@
 <a href="/chatrooms/health/<%= userid%>">
     <div class="col-lg-4 col-md-3 col-sm-6 lodgeMain">
 
-      <div class="card" style="width: 11.5rem;">
+      <div class="card" style="width: 8rem; margin:0 40px">
       <img class="card-img-top" src="/img/dhlth.png" alt="Card image cap">
       <div class="card-body">
       <h5 class="card-title">Health & Family Welfare</h5>
@@ -34,7 +115,7 @@
 <a href="/chatrooms/external_affair/<%= userid%>">
       <div class="col-lg-4 col-md-3 col-sm-6 lodgeMain">
 
-        <div class="card" style="width: 11.5rem;">
+        <div class="card" style="width: 8rem; margin:0 40px">
         <img class="card-img-top" src="/img/meapd.png" alt="Card image cap">
         <div class="card-body">
         <h5 class="card-title">External Affairs</h5>
@@ -51,7 +132,7 @@
   <a href="/chatrooms/banking/<%= userid%>">
   <div class="col-lg-4 col-md-3 col-sm-6 lodgeMain">
 
-    <div class="card" style="width: 11.5rem;">
+    <div class="card" style="width: 8rem; margin:0 40px">
     <img class="card-img-top" src="/img/deabd.png" alt="Card image cap">
     <div class="card-body">
     <h5 class="card-title">Banking (Financial Services)</h5>
@@ -66,7 +147,7 @@
 
     <div class="col-lg-4 col-md-3 col-sm-6 lodgeMain">
 
-      <div class="card" style="width: 11.5rem;">
+      <div class="card" style="width: 8rem; margin:0 40px">
       <img class="card-img-top" src="/img/deaid.png" alt="Card image cap">
       <div class="card-body">
       <h5 class="card-title">Insurance (Financial Services)</h5>
@@ -80,7 +161,7 @@
 <a href="/chatrooms/telecoms/<%= userid%>">
       <div class="col-lg-4 col-md-3 col-sm-6 lodgeMain">
 
-        <div class="card" style="width: 11.5rem;">
+        <div class="card" style="width: 8rem; margin:0 40px">
         <img class="card-img-top" src="/img/dotel.png" alt="Card image cap">
         <div class="card-body">
         <h5 class="card-title">Tele-communications (D/o Telecom)</h5>
@@ -96,7 +177,7 @@
   <a href="/chatrooms/petroleum/<%= userid%>">
   <div class="col-lg-4 col-md-3 col-sm-6 lodgeMain">
 
-    <div class="card" style="width: 11.5rem;">
+    <div class="card" style="width: 8rem; margin:0 40px">
     <img class="card-img-top" src="/img/mpang.png" alt="Card image cap">
     <div class="card-body">
     <h5 class="card-title">Petroleum & Natural Gas</h5>
@@ -109,7 +190,7 @@
   <a href="/chatrooms/schooledu/<%= userid%>">
     <div class="col-lg-4 col-md-3 col-sm-6 lodgeMain">
 
-      <div class="card" style="width: 11.5rem;">
+      <div class="card" style="width: 8rem; margin:0 40px">
       <img class="card-img-top" src="/img/dosel.png" alt="Card image cap">
       <div class="card-body">
       <h5 class="card-title">School Education & Literacy</h5>
@@ -123,7 +204,7 @@
   <a href="/chatrooms/road/<%= userid%>">
       <div class="col-lg-4 col-md-3 col-sm-6 lodgeMain">
 
-        <div class="card" style="width: 11.5rem;">
+        <div class="card" style="width: 8rem; margin:0 40px">
         <img class="card-img-top" src="/img/morth.png" alt="Card image cap">
         <div class="card-body">
         <h5 class="card-title">Road Transport & Highways</h5>
@@ -139,119 +220,17 @@
 
 
 
-<div class="card" style="width: 11.5rem;">
+<%# <div class="card" style="width: 8rem; margin:0 40px">
 <img class="card-img-top" src="/img/others.png" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">Others</h5>
 <p class="card-text"></p>
 </div>
-</div>
+</div> %>
 
 
 </div>
-<%# <span class="select2-container select2-container--default select2-container--open" style="top: 344.437px; left: 664.475px;">
-  <span class="select2-dropdown select2-dropdown--above" dir="ltr" style="width: 595.275px;">
-    <span class="select2-search select2-search--dropdown">
-      <input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox">
-</span>
-<span class="select2-results">
-  <ul class="select2-results__options" role="tree" id="select2-Category_2-results" aria-expanded="true" aria-hidden="false">
-    <li class="select2-results__option" role="treeitem" aria-selected="true" data-select2-id="25">Please select main category</li>
-    <li class="select2-results__option" id="select2-Category_2-result-f6pf-657" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-f6pf-657">Hospitals</li>
-    <li class="select2-results__option" id="select2-Category_2-result-sv9w-658" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-sv9w-658">Medicines</li>
-    <li class="select2-results__option" id="select2-Category_2-result-7c0t-659" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-7c0t-659">CGHS Health Centres</li>
-    <li class="select2-results__option" id="select2-Category_2-result-bvkv-660" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-bvkv-660">Medical Education</li>
-    <li class="select2-results__option select2-results__option--highlighted" id="select2-Category_2-result-h67l-661" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-h67l-661">Financial Assistance for Medical Treatment</li>
-    <li class="select2-results__option" id="select2-Category_2-result-exyr-662" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-exyr-662">Health Schemes</li>
-    <li class="select2-results__option" id="select2-Category_2-result-bgri-663" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-bgri-663">Public Health</li>
-    <li class="select2-results__option" id="select2-Category_2-result-ajv1-664" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-ajv1-664">Food Regulation</li>
-    <li class="select2-results__option" id="select2-Category_2-result-8ems-665" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-8ems-665">Online Health Services</li>
-    <li class="select2-results__option" id="select2-Category_2-result-81tx-666" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-81tx-666">Policy Matters
-    </li>
-    <li class="select2-results__option" id="select2-Category_2-result-kn00-667" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-kn00-667">MoHFW Employee Related</li>
-    <li class="select2-results__option" id="select2-Category_2-result-ezm0-668" role="treeitem" aria-selected="false" data-select2-id="select2-Category_2-result-ezm0-668">Other</li>
-  </ul>
-</span>
-</span>
-</span> %>
-  <%# <form action="cmplaint.php" method="POST" class="formalign">
-			<fieldset>
-				<h2 class="comptype">Type of complaint</h2>
-				<hr class="linewid">
-				<div>
-				<div>
-					<input id="Field5_0" name="type" type="radio" value="murder" tabindex="1">
-					<label class="choice" for="Field5_0">Murder/Homicide</label>
-				</div>
-				<div>
-					<input id="Field5_1" name="type" type="radio" value="domestic" tabindex="2">
-					<label class="choice" for="Field5_1">Domestic Violence</label>
-				</div>
-				<div>
-					<input id="Field5_2" name="type" type="radio" value="sexual" tabindex="3">
-					<label class="choice" for="Field5_2">Sexual Harassment</label>
-				</div>
-				<div>
-					<input id="Field5_3" name="type" type="radio" value="assault" tabindex="4">
-					<label class="choice" for="Field5_3">Assault/Violence</label>
-				</div>
-				<div>
-					<input id="Field5_4" name="type" type="radio" value="theft" tabindex="5">
-					<label class="choice" for="Field5_4">Theft/Robbery</label>
-				</div>
-				</div>
-			</fieldset>
-			<div>
-				<label class="desc" id="title4" for="Field4">Any other? Please Specify!</label>
-				<div>
-					<textarea id="Field4" name="other" spellcheck="true" rows="2" cols="30" tabindex="6"></textarea>
-				</div>
-			</div>
-<!--			<br><br><br><br>-->
-			<div>
-			<fieldset>
-				<h2 id="title6" class="comptype">Assistance Required</h2>
-				<hr class="linewid">
-				<div>
-					<input id="Field6" name="medical" type="checkbox" value="First Choice" tabindex="8">
-					<label class="choice" for="Field6">Medical</label>
-				</div>
-				<div>
-					<input id="Field7" name="police" type="checkbox" value="Second Choice" tabindex="9">
-					<label class="choice" for="Field7">Police</label>
-				</div>
-				<div>
-					<input id="Field8" name="counselling" type="checkbox" value="Third Choice" tabindex="10">
-					<label class="choice" for="Field8">Counselling</label>
-				</div>
-			</fieldset>
-			</div>
-			<div>
-				<h2 id="title6" class="comptype">Event Details</h2>
-				<hr class="linewid">
-				<div>
-					<textarea id="Field4" name="details" spellcheck="true" rows="5" cols="50" tabindex="7" placeholder="Enter Details.."></textarea>
-				</div>
-			</div>
-			<div>
-				<label class="essdetails" id="title1" for="Field1">Full Name</label>
-				<hr class="linewid">
-				<div>
-					<input id="Field1" name="name" type="text" class="field text fn" value="" size="30" tabindex="9">
-				</div>
-			</div>
 
-			<div>
-				<label class="essdetails" id="title3" for="Field3">Email</label>
-				<hr class="linewid">
-				<div>
-					<input id="Field3" name="email" type="email" spellcheck="false" value="" size="30" maxlength="255" tabindex="10">
-				</div>
-			</div>
-			<div class="submitComplaint">
-            <input type="submit" class="btn btn-danger subbtn" name='submit'  value='CryOut!'>
-		    </div>
-		</form> %>
 </div>
 
 <%-include("partials/footer")-%>

@@ -8,7 +8,7 @@ var User = require('../model/user');
 var Grievance = require('../model/grievance');
 
 
-router.use(express.static(path.join(__dirname + 'public')));
+router.use(express.static(path.join(__dirname + '/../public/')));
 
 router.get('/',function(req,res){
     res.render("organization_chat.ejs");
