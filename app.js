@@ -18,6 +18,8 @@ const FileAComplaint = require('./routes/FileAComplaint');
 const organization = require('./routes/organization');
 const myGrievances = require('./routes/myGrievances');
 const organization_emp = require('./routes/organization-emp');
+const chat = require('./routes/chat');
+const multer = require('multer');
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
@@ -26,10 +28,13 @@ mongoose.connect(configDB.url, {
   useUnifiedTopology: true
 });
 
+
+
 require('./config/passport')(passport);
 
 var app = express();
-
+// var http = require('http').createServer(app);
+// var io = require('socket.io')(http);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -42,6 +47,7 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(session({
   secret: process.env.SESSION_SECRET
 }));
@@ -56,6 +62,7 @@ app.use('/FileAComplaint', FileAComplaint);
 app.use('/organization', organization);
 app.use('/organization-emp', organization_emp);
 app.use('/myGrievances', myGrievances);
+app.use('/chat', chat);
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   next(createError(404));
@@ -72,6 +79,26 @@ app.use('/myGrievances', myGrievances);
 //   res.render('error');
 // });
 
+// app.get('/chat1', (req, res) => {
+//   string= req.user._id
+//   res.redirect('http://localhost:3000/'+string);
+// });
+//
+// io.on('connection', (socket) => {
+//   console.log('a user connected');
+// });
+
+// var proxy = require('express-http-proxy');
+
+// app.use('/chat1', proxy('3000', {
+//     forwardPath: function (req, res) {
+//       return '/path/where/you/want/to/proxy/' + req.url
+//     }
+// }))
+
+app.get('/help', function (req,res){
+  res.render('help');
+});
 app.listen(3002, function(err) {
   console.log('Server started on 3002');
 });

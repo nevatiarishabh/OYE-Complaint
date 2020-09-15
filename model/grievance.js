@@ -17,8 +17,9 @@ const gSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    default: 'Submitted' 
-  }
+    default: 'Submitted'
+  },
+    uploadfile:Object
 });
 
 

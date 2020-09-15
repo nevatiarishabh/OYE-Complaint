@@ -27,6 +27,7 @@ module.exports = function(passport) {
 
       process.nextTick(function() {
         const username = req.body.username;
+        const aadhar_number = req.body.aadhar_number;
         User.findOne({
           'Email': email
         }, function(err, user) {
@@ -38,6 +39,7 @@ module.exports = function(passport) {
             var newUser = new User();
             newUser.Email = email;
             newUser.Name = username;
+            newUser.aadhar_number = aadhar_number;
             newUser.local.password = newUser.generateHash(password);
             newUser.loginType = 'local';
             newUser.save(function(err) {
