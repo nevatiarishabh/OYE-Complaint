@@ -51,14 +51,21 @@
                 <div class="col-lg-8 col-md-9">
                     <nav class="header__menu mobile-menu">
                         <ul>
+
+
                           <li class="inactive"><a href="http://localhost:3002">Home</a></li>
+
+                          <%if(user.isEmployee) {%>
+                          <li class="inactive"><a href="/organization-emp">Received Grievances</a></li>
+                          <li class="inactive"><a href="/logout">Logout</a></li>
+
+                          <%} else {%>
+
                   <li class="inactive"><a href="http://localhost:3002/FileAComplaint">File a Complaint</a></li>
                   <li class="inactive"><a href="http://localhost:3002/help">Help</a></li>
-
-
                   <li class="inactive"><a href="http://localhost:3002/myGrievances">My Grievances</a></li>
                   <li class="inactive"><a href="http://localhost:3002/logout">Logout</a></li>
-
+                      <% } %>
                         </ul>
                     </nav>
                 </div>

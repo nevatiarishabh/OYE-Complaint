@@ -14,7 +14,7 @@ router.get('/', isLoggedIn, (req, res) => {
 });
 
 router.get('/notloggedIn', isLoggedIn, (req, res) => {
-  
+
 });
 
 router.get('/:userid', (req, res) => {
@@ -26,7 +26,7 @@ router.get('/:userid', (req, res) => {
       res.send(err);
     } else {
       req.user = user
-      res.render("organization_chat.ejs", {userid:req.user.Name});
+      res.render("organization_chat.ejs", {user:req.user,userid:req.user.Name});
     }
   });
 // res.redirect('/chatrooms');
