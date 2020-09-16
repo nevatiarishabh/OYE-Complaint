@@ -113,21 +113,7 @@ router.post('/post1', upload.single('uploadfile'),isLoggedIn, function(req, res)
   newcomplaint.status = 'Submitted';
   newcomplaint.uploadfile = file;
   newcomplaint.save();
-  // User.find({_id:req.user._id},function(err,res1){
-  //   if (err)
-  //     console.log(err);
-  //   else{
-  //     if (typeof(req.user.grievances) == 'undefined') {
-  //     myGrievances = [];
-  //     myGrievances.push(newcomplaint);
-  //     req.user.grievances = myGrievances;
-  //     req.user.save();
-  //   } else {
-  //     req.user.grievances.push(newcomplaint);
-  //     req.user.save();
-  //   }
-  //   }
-  // });
+
   res.redirect('/myGrievances');
 });
 
@@ -142,8 +128,9 @@ router.post('/health1', upload.single('uploadfile'),isLoggedIn, function(req, re
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
+  newcomplaint.uploadfile = file;
   newcomplaint.save();
-    newcomplaint.uploadfile = file;
+
   res.redirect('/myGrievances');
 });
 
@@ -158,8 +145,8 @@ router.post('/banking1',  upload.single('uploadfile'),isLoggedIn, function(req, 
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
+  newcomplaint.uploadfile = file;
   newcomplaint.save();
-    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
@@ -173,8 +160,8 @@ router.post('/insurance1',  upload.single('uploadfile'),isLoggedIn, function(req
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
+  newcomplaint.uploadfile = file;
   newcomplaint.save();
-    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
@@ -189,8 +176,8 @@ router.post('/externalaffair1',  upload.single('uploadfile'),isLoggedIn, functio
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
+  newcomplaint.uploadfile = file;
   newcomplaint.save();
-    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
@@ -205,8 +192,8 @@ router.post('/petroleum1', upload.single('uploadfile'),isLoggedIn, function(req,
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
+  newcomplaint.uploadfile = file;
   newcomplaint.save();
-    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
@@ -221,8 +208,8 @@ router.post('/road1', upload.single('uploadfile'),isLoggedIn, function(req, res)
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
+  newcomplaint.uploadfile = file;
   newcomplaint.save();
-    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
@@ -237,8 +224,9 @@ router.post('/schooledu1',  upload.single('uploadfile'),isLoggedIn, function(req
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
+  newcomplaint.uploadfile = file;
   newcomplaint.save();
-    newcomplaint.uploadfile = file;
+
   res.redirect('/myGrievances');
 });
 
@@ -253,8 +241,8 @@ router.post('/telecoms1',  upload.single('uploadfile'),isLoggedIn, function(req,
   newcomplaint.user = req.user._id;
   newcomplaint.date_posted = Date.now();
   newcomplaint.status = 'Submitted';
+  newcomplaint.uploadfile = file;
   newcomplaint.save();
-    newcomplaint.uploadfile = file;
   res.redirect('/myGrievances');
 });
 
