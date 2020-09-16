@@ -22,6 +22,11 @@
       <p class="card-text" style="text-align:left;">
       <%= myGrievances[i].Description %>
       </p>
+      <% if(typeof(myGrievances[i].uploadfile) != 'undefined'){ %>
+        <iframe id="myFrame<%= i %>" style="display:none" width="600" height="300"></iframe>
+        <input id='<%=myGrievances[i].uploadfile.filename%>' type="button" class="btn btn-primary myBtn" value="Open Uploaded File" onclick="openPdf(this,<%= i %>)" />
+      <% } %>
+      <br><br>
   <!--<button onclick="myFunction(<%= i %>)" class="btn btn-primary myBtn">Show Progress</button>-->
         </div>
     <div style="margin:0px 20px;" id='tests<%= i %>'>
@@ -131,7 +136,12 @@
 		    </div>
 		</form> %>
 </div>
-<script type="text/javascript">
-
+<script>
+function openPdf(input , i){
+  console.log(input.id)
+  let omyFrame = document.getElementById("myFrame"+i);
+  omyFrame.style.display="block";
+  omyFrame.src = '../'+input.id;
+}
 </script>
 <%-include("partials/footer")-%>
